@@ -17,8 +17,8 @@
     "minimist": "^1.1.1",
     "morgan": "^1.5.2",
     "nib": "^1.1.0",
-    "sHTTP": "git://github.com/jaeh/sHTTP",
     "serve-favicon": "^2.2.0",
+    "shttp": "0.0.9",
     "stylus": "^0.50.0",
     "webfont-dl": "^0.1.2"
   },
