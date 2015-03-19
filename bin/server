@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo 'starting server...'
-node node_modules/.bin/sHTTP --dir=dist
+node_modules/.bin/shttp --dir=dist
