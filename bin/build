@@ -1,0 +1,30 @@
+#!/bin/bash
+echo 'delete and recreate dist directory'
+rm dist/ -rf
+mkdir dist/ dist/js dist/css
+
+echo 'copy src/ files to dist/'
+cd ./src && cp -rf \
+  img css font favicon.ico \
+  ../dist/ \
+&& cd ../ \
+;
+
+echo 'browserify and babelify main app'
+#compile client side js
+node_modules/.bin/browserify \
+  src/js/ \
+  --outfile dist/js/main.js \
+  -t babelify \
+;
+
+echo 'stylus compile invader css styles'
+node_modules/.bin/stylus src/css/main.styl --out dist/css/main.css
+
+echo 'jade compiling html files in dist/'
+node_modules/.bin/jade src/html/pages/ --out dist/
+
+echo 'clean up jade files'
+find ./dist -name "*.jade" -type f -exec rm {} \;
+echo 'clean up stylus files';
+find ./dist -name '*.styl' -type f -exec rm {} \;

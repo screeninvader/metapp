@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#first install npm dependencies
+npm install --production
+
+#installs a google webfont for local use and serving
+./node_modules/.bin/webfont-dl \
+  https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700 \
+  --font-out=src/font \
+  --out src/css/font.styl \
+  --css-rel=/font

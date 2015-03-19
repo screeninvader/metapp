@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo 'asking for root to make sure you want it and know what you are doing'
+echo 'rm command will not use root'
+su root -c 'echo "delete node_modules and dist"'
+
+rm -rf \
+  ./node_modules \
+  ./dist
