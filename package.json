@@ -1,0 +1,51 @@
+{
+  "name": "metapp",
+  "version": "0.0.1",
+  "description": "The metapp is an interface to the interfaces in the https://metalab.at",
+  "private": true,
+  "author": "Metalab <metalab@lists.metalab.at>",
+  "license": "Probably will be AGPL.",
+  "scripts": {
+    "start": "./bin/build && ./bin/server"
+  },
+  "dependencies": {
+    "babel": "^4.7.16",
+    "babelify": "^5.0.4",
+    "browserify": "^9.0.3",
+    "express": "^4.12.3",
+    "jade": "^1.9.2",
+    "minimist": "^1.1.1",
+    "morgan": "^1.5.2",
+    "nib": "^1.1.0",
+    "sHTTP": "git://github.com/jaeh/sHTTP",
+    "serve-favicon": "^2.2.0",
+    "stylus": "^0.50.0",
+    "webfont-dl": "^0.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/screeninvader/metapp"
+  },
+  "keywords": [
+    "metapp",
+    "metalab",
+    "screeninvader",
+    "slack",
+    "praise",
+    "bob"
+  ],
+  "bugs": {
+    "url": "https://github.com/screeninvader/metapp/issues"
+  },
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "email": "jascha@jaeh.at",
+      "github": "jaeh"
+    },
+    {
+      "name": "sonstwer",
+      "github": "sonstwer"
+    }
+  ]
+}
