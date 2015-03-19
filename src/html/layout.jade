@@ -2,16 +2,24 @@ doctype html
 html
   head
     title metapp
+    meta(
+      name='viewport' 
+      content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'
+    )
+
+    link(rel='stylesheet' href='/css/main.css')
 
 body
   header.main
     block header
-      div header
+      img(src=/img/logo.png)
+
   div.main
     block content
 
   footer.main
     block footer
       div footer
+        
 
   script(src='/js/main.js')
