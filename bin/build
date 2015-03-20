@@ -26,9 +26,18 @@ node_modules/.bin/stylus \
 ;
 
 echo 'jade compiling html files in dist/'
-node_modules/.bin/jade src/html/pages/ --out dist/
+node_modules/.bin/jade \
+  src/html/pages \
+  --out dist \
+;
+#~ echo 'clean up jade files'
+#~ find ./dist -name "*.jade" -type f -exec rm {} \;
+#~ echo 'clean up stylus files';
+#~ find ./dist -name '*.styl' -type f -exec rm {} \;
 
-echo 'clean up jade files'
-find ./dist -name "*.jade" -type f -exec rm {} \;
-echo 'clean up stylus files';
-find ./dist -name '*.styl' -type f -exec rm {} \;
+echo 'html-inline all assets into inline.html'
+node_modules/.bin/html-inline \
+  -i dist/singlepage.html \
+  -o dist/inline.html \
+  -b dist/ \
+;

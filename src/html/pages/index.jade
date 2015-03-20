@@ -1,20 +1,4 @@
 extends ../layout
 
-block content
-  div
-    ul
-      li.slackomatic
-        a(href='http://10.20.30.90')
-          img(src='/img/menu/slackomatic.png' alt='Slackomatic' title='Slackomatic')
-
-      li.screeninvader
-        a(href='http://10.20.30.40')
-          img(src='/img/menu/screeninvader.png' alt='ScreenInvader' title='ScreenInvader')
-
-      li.metalab
-        a(href='https://metalab.at')
-          img(src='/img/menu/metalab.png' alt='Metalab' title='Metalab')
-
-      li.metalabwiki
-        a(href='https://metalab.at/wiki')
-          img(src='/img/menu/metalab-wiki.png' alt='Metalab Wiki' title='Metalab Wiki')
+block main
+  include ../contents/index.jade

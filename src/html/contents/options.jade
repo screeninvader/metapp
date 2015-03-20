@@ -1,0 +1,19 @@
+-var slackomaticIp = '10.20.30.90';
+-var screenInvaderIp = '10.20.30.40';
+
+inputItem(name, type, value, placeholder)
+  li
+    - placeholder = placeholder || name;
+    label(for=name)= placeholder
+    input(
+      id=name
+      name=name
+      placeholder=placeholder
+      type=type
+      value=value
+    )
+
+section.page.options
+  ul
+    inputItem('slackomaticIp', 'text', 'Slackomatic Ip:')
+    inputItem('screenInvaderIp', 'text', 'ScreenInvader Ip:')

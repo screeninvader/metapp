@@ -4,22 +4,19 @@ html
     title metapp
     meta(
       name='viewport' 
-      content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'
-    )
-
+      content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes')
     link(rel='stylesheet' href='/css/main.css')
 
-body
-  header.main
-    block header
-      img(src=/img/logo.png)
+  body
+    header.main
+      block header
+        img(src='/img/logo.png')
 
-  div.main
-    block content
+    main
+      block main
 
-  footer.main
-    block footer
-      div footer
-        
+    footer.main
+      block footer
+        div footer
 
-  script(src='/js/main.js')
+    script(src='/js/main.js')

@@ -13,6 +13,7 @@
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
     "express": "^4.12.3",
+    "html-inline": "^1.1.1",
     "jade": "^1.9.2",
     "minimist": "^1.1.1",
     "morgan": "^1.5.2",
