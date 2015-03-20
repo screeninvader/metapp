@@ -1,11 +1,18 @@
 #!/bin/bash
 
-#first install npm dependencies
+echo 'first install npm dependencies'
 npm install --production
 
-#installs a google webfont for local use and serving
+echo 'install a google webfont for local use and serving (Ubuntu Mono)'
 ./node_modules/.bin/webfont-dl \
   https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700 \
   --font-out=src/font \
-  --out src/css/font.styl \
-  --css-rel=/font
+  --out src/css/font/bodyfont.styl \
+  --css-rel=/font \
+;
+echo 'running fontello-cli to get custom icon font'
+./node_modules/.bin/fontello-cli install \
+  --config src/fontello-config.js \
+  --css src/css/font/ \
+  --font src/font/ \
+;
