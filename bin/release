@@ -1,0 +1,3 @@
+#!/bin/bash
+echo 'release new version of the app using hyperboot'
+node_modules/.bin/hyperboot release dist/index.html $@
