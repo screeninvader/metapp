@@ -6,17 +6,31 @@ html
       name='viewport' 
       content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes')
     link(rel='stylesheet' href='/css/main.css')
+    link(
+      rel="icon" 
+      href="/favicon.ico"
+    )
 
   body
     header.main
       block header
-        img(src='/img/logo.png')
+        a(href='/')
+          img.logo.metalab(src='/img/metalab-logo-black.png')
+          img.logo.metapp(src='/img/metapp-logo-black.png')
+
+      a.update.i-lightbulb(href='/options')
+      a.config.i-cogs(href='/options')
 
     main
       block main
 
     footer.main
       block footer
-        div footer
+        div 
+          | made with 
+          span.love.i-heart-empty
+          span.tmi
+            |  by folks in the 
+            a(href='https://metalab.at') metalab.at
 
     script(src='/js/main.js')

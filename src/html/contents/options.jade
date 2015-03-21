@@ -1,7 +1,7 @@
 -var slackomaticIp = '10.20.30.90';
 -var screenInvaderIp = '10.20.30.40';
 
-inputItem(name, type, value, placeholder)
+mixin inputItem(name, type, placeholder, value)
   li
     - placeholder = placeholder || name;
     label(for=name)= placeholder
@@ -13,7 +13,7 @@ inputItem(name, type, value, placeholder)
       value=value
     )
 
-section.page.options
+section#options.page
   ul
-    inputItem('slackomaticIp', 'text', 'Slackomatic Ip:')
-    inputItem('screenInvaderIp', 'text', 'ScreenInvader Ip:')
+    +inputItem('slackomaticIp', 'text', 'Slackomatic Ip:')
+    +inputItem('screenInvaderIp', 'text', 'ScreenInvader Ip:')
