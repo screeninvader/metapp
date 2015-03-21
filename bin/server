@@ -1,4 +1,3 @@
 #!/bin/bash
-
-echo 'starting server...'
-node_modules/.bin/shttp --dir=dist --single
+echo 'release new version of the app using hyperboot'
+node_modules/.bin/hyperboot server $@
