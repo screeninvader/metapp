@@ -29,6 +29,7 @@ node_modules/.bin/stylus \
   --out dist/css/main.css \
   --import node_modules/nib/ \
   --include-css \
+  --compress \
 ;
 
 echo 'jade compiling html files in dist/'
@@ -38,11 +39,21 @@ node_modules/.bin/jade \
   --list \
 ;
 
+echo 'uglifying the assets'
+node_modules/.bin/uglifyjs \
+  --compress \
+  --screw-ie8 \
+  -o dist/js/main.js \
+  --mangle \
+  -- dist/js/main.js \
+;
+
 echo 'html-inline all assets into inline.html'
 node_modules/.bin/html-inline \
   -i dist/singlepage.html \
   -o dist/index.html \
   -b dist/ \
+  --compress \
 ;
 
 echo 'clean up jade files'
