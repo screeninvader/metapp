@@ -1,5 +1,5 @@
 node_modules
 npm-debug.log
-src/font
-src/css/font.styl
+src/font/
+src/css/font/
 dist/
