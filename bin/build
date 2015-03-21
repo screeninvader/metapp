@@ -10,6 +10,9 @@ cd ./src && cp -rf \
 && cd ../ \
 ;
 
+echo 'copy node_modules to dist for browserify'
+cp node_modules dist/ -rf
+
 echo 'browserify and babelify main app'
 #compile client side js
 node_modules/.bin/browserify \
@@ -19,25 +22,41 @@ node_modules/.bin/browserify \
 ;
 
 echo 'stylus compile invader css styles'
+cp src/css/font/metapp-embedded.css src/css/font/metapp-embedded.styl
+
 node_modules/.bin/stylus \
   src/css/main.styl \
   --out dist/css/main.css \
   --import node_modules/nib/ \
+  --include-css \
+  --compress \
 ;
 
 echo 'jade compiling html files in dist/'
 node_modules/.bin/jade \
   src/html/pages \
   --out dist \
+  --list \
 ;
-#~ echo 'clean up jade files'
-#~ find ./dist -name "*.jade" -type f -exec rm {} \;
-#~ echo 'clean up stylus files';
-#~ find ./dist -name '*.styl' -type f -exec rm {} \;
+
+echo 'uglifying the assets'
+node_modules/.bin/uglifyjs \
+  --compress \
+  --screw-ie8 \
+  -o dist/js/main.js \
+  --mangle \
+  -- dist/js/main.js \
+;
 
 echo 'html-inline all assets into inline.html'
 node_modules/.bin/html-inline \
   -i dist/singlepage.html \
-  -o dist/inline.html \
+  -o dist/index.html \
   -b dist/ \
+  --compress \
 ;
+
+echo 'clean up jade files'
+find ./dist -name "*.jade" -type f -exec rm {} \;
+echo 'clean up stylus files';
+find ./dist -name '*.styl' -type f -exec rm {} \;

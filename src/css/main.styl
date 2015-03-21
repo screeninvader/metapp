@@ -1,14 +1,68 @@
 global-reset()
 
-@import font
+@import 'font/bodyfont'
+@import 'font/metapp-embedded'
 @import sanity
 
-ul
-  li
-    display inline-block
-    list-style none
-    margin 2%
-    width 21%
+body
+  font-size 20px
 
+header.main
+  text-align center
+  margin 0 0 1em
+  a
     img
-      width 100%
+      display inline-block
+      &:first-child
+        max-width 24%
+        max-height 110px
+      &:last-child
+        max-width 40%
+
+  a.config, a.update
+    position absolute
+    top 5px
+
+    a
+      &:hover
+        color #666
+
+  a.config
+    right 5px
+  a.update
+    left 5px
+
+
+section.page
+  &#home
+    ul
+      li
+        display inline-block
+        list-style none
+        margin 2%
+        width 21%
+
+        img
+          width 100%
+
+  &#options
+    ul
+      text-align right
+      
+      li
+        input
+          
+
+footer.main
+  bottom 0
+  position absolute
+  width 100%
+  text-align center
+
+.tmi
+  display none
+
+
+@media all and (min-width 400px)
+  .tmi
+    display inline
