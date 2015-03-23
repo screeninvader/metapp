@@ -1,0 +1,44 @@
+html(manifest='hyperboot.appcache')
+  head
+    link(rel='shortcut icon' href='/favicon.ico')
+    meta(
+      name='viewport' 
+      content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'
+    )
+    link(rel='stylesheet' href='./main.css')
+
+  body
+    div#page
+      iframe#frame
+      div#sidebar
+        h1(data-name) metapp updates
+
+        button.close X
+
+        div.current
+          div.hash
+          div.version
+        
+        div#versions
+          div.app-versions
+            div.version(template='app-version')
+              div.row
+                span.ver
+                span.saved
+
+              div.hash
+              div.message
+
+          div.boot-versions
+            div.version.boot(template='boot-version')
+              div.row
+                | hyperboot version 
+                span.ver
+                span.saved
+
+              div.hash
+              div.message
+
+      div#message
+
+    script(src='hyperboot.js')
