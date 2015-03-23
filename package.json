@@ -6,7 +6,13 @@
   "author": "Metalab <metalab@lists.metalab.at>",
   "license": "Probably will be AGPL.",
   "scripts": {
-    "start": "./bin/build && ./bin/server"
+    "start": "./bin/build && ./bin/dev",
+    "stage": "./bin/server -p 1337",
+    "build": "./bin/build",
+    "prod": "./bin/build-production",
+    "release": "./bin/build-production && ./bin/release",
+    "server": "./bin/server",
+    "setup": "./bin/install"
   },
   "dependencies": {
     "babel": "^4.7.16",
@@ -15,15 +21,19 @@
     "express": "^4.12.3",
     "fontello-cli": "^0.3.1",
     "html-inline": "^1.1.1",
+    "hyperboot": "^2.1.1",
+    "is": "^3.0.1",
     "jade": "^1.9.2",
     "minimist": "^1.1.1",
     "morgan": "^1.5.2",
     "nib": "^1.1.0",
+    "page": "^1.6.1",
     "serve-favicon": "^2.2.0",
-    "shttp": "0.0.9",
+    "shttp": "^0.1.3",
     "stylus": "^0.50.0",
     "uglify-js": "^2.4.17",
-    "webfont-dl": "^0.1.2"
+    "webfont-dl": "^0.1.2",
+    "winston": "^0.9.0"
   },
   "repository": {
     "type": "git",
