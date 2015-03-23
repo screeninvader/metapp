@@ -6,41 +6,75 @@ global-reset()
 
 body
   font-size 20px
+  width 100%
+  
+  &.light
+    background-color #fff
+    color #000
+
+    header.main
+      .light
+        display block
+      .dark
+        display none
+
+    section.page
+      background-color #fff
+
+    a
+      color #000
+      cursor pointer
+
+      &:hover
+        color #888
+  
+  &.dark
+    background-color #000
+    color #fff
+
+    header.main
+      .dark
+        display block
+      .light
+        display none
+    section.page
+      background-color #000
+
+    a
+      color #fff
+      cursor pointer
+
+      &:hover
+        color #888
 
 header.main
   text-align center
-  margin 0 0 1em
+  margin .25em 0 .5em
   a
+    display inline-block
     img
       display inline-block
       &:first-child
-        max-width 24%
-        max-height 110px
+        height 35px
       &:last-child
-        max-width 40%
+        height 40px
 
-  a.config, a.update
+  .config, 
+  .update
     position absolute
     top 5px
-
-    a
-      &:hover
-        color #666
+    font-size 2em
 
   a.config
     right 5px
   a.update
     left 5px
 
-a
-  color #000
-  cursor pointer
-
-  &:hover
-    color #888
-
-
 section.page
+  background-color #fff
+  position absolute
+  width 100%
+
   &#home
     ul
       li
@@ -51,14 +85,42 @@ section.page
 
         img
           width 100%
+          border-radius 20%
 
   &#options
-    ul
-      text-align right
-      
-      li
-        input
-          
+    z-index 10
+    position fixed
+    right -100%
+    max-width 100%
+    opacity 0
+    transition right .3s, opacity .5s
+    font-size .8em
+    
+    input[type=text]
+      font-size .8em
+      padding .2em
+      width 85px
+
+    input[type=radio]
+      width 20px
+      height 20px
+
+    &.active
+      right 0
+      opacity 1
+    
+    .container
+      text-align center
+      max-width 300px
+      margin 0 auto
+      width 100%
+
+      .options.ips
+        ul
+          text-align right
+
+      .submit
+        margin 3em 0 0
 
 footer.main
   bottom 0
@@ -68,8 +130,41 @@ footer.main
 
 .tmi
   display none
-
+.love
+  font-size .9em
 
 @media all and (min-width 400px)
   .tmi
     display inline
+
+@media all and (max-width 400px)
+  
+  section.page
+
+    &#home
+      ul
+        li
+          width 46%
+
+#saved
+  color green
+  opacity 0
+  transition opacity .2s
+  
+  .visible
+    opacity 1
+
+h1
+  font-size 1.5em
+  margin 0 0 1em
+
+h2
+  font-size 1.2em
+  margin 0 0 1em
+
+h3
+  font-size 1.1em
+  margin 1em 0 .5em
+
+h4
+  font-size 1.1em

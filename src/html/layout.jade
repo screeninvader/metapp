@@ -4,7 +4,8 @@ html
     title metapp
     meta(
       name='viewport' 
-      content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes')
+      content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'
+    )
     link(rel='stylesheet' href='/css/main.css')
     link(
       rel="icon" 
@@ -14,23 +15,29 @@ html
   body
     header.main
       block header
-        a(href='/')
+        a.light(href='./')
           img.logo.metalab(src='/img/metalab-logo-black.png')
           img.logo.metapp(src='/img/metapp-logo-black.png')
+        a.dark(href='./')
+          img.logo.metalab(src='/img/metalab-logo-white.png')
+          img.logo.metapp(src='/img/metapp-logo-white.png')
 
-      a.update.i-lightbulb(data-href='/options')
-      a.config.i-cogs(data-href='/options')
+      a#update.update.i.i-lightbulb
+      a.config.i.i-cogs(data-href='options')
 
     main
-      block main
+      div.main
+        block main
 
     footer.main
       block footer
         div 
           | made with 
           span.love.i-heart-empty
+          |  
           span.tmi
-            |  by folks in the 
-            a(href='https://metalab.at') metalab.at
+            | by folks 
+          | in the 
+          a(href='https://metalab.at') metalab.at
 
     script(src='/js/main.js')

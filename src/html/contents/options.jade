@@ -14,6 +14,25 @@ mixin inputItem(name, type, placeholder, value)
     )
 
 section#options.page
-  ul
-    +inputItem('slackomaticIp', 'text', 'Slackomatic Ip:')
-    +inputItem('screenInvaderIp', 'text', 'ScreenInvader Ip:')
+  div.container
+    h2 Settings
+
+    div.options.ips
+      h3 Ips:
+      ul
+        +inputItem('slackomatic', 'text', 'Slackomatic:')
+        +inputItem('screeninvader', 'text', 'ScreenInvader:')
+
+    div.options.theme
+      h3 Theme:
+      ul.themesettings
+        li
+          label(for='dark') dark
+          input#dark(type='radio' name='theme' value='dark')
+        li
+          label(for='light') light
+          input#light(type='radio' name='theme' value='light')
+
+    div.submit
+      input(type='submit' value='save options')
+      div#saved saved options
