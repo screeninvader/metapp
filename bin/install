@@ -9,6 +9,9 @@ echo 'install a google webfont for local use and serving (Ubuntu Mono)'
   --font-out=src/font \
   --out src/css/font/bodyfont.styl \
   --css-rel=/font \
+  --svg omit \
+  --eot omit \
+  --ttf omit \
 ;
 echo 'running fontello-cli to get custom icon font'
 ./node_modules/.bin/fontello-cli install \

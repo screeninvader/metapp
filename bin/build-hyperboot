@@ -1,0 +1,36 @@
+#!/bin/bash
+echo 'bundling hyperboot theme'
+rm dist/hyperboot -rf
+mkdir dist/hyperboot -p
+
+echo 'browserify original hyperboot js'
+node_modules/.bin/browserify \
+  node_modules/hyperboot/browser/preboot.js \
+  > dist/hyperboot/hyperboot.js \
+;
+
+echo 'stylus compile hyperboot css'
+node_modules/.bin/stylus \
+  src/hyperboot/static/main.styl \
+  --out dist/hyperboot/main.css \
+  --import node_modules/nib/ \
+  --include-css \
+;
+
+echo 'jade compiling html file'
+node_modules/.bin/jade \
+  src/hyperboot/static/site.jade \
+  --out dist/hyperboot/ \
+  --list \
+;
+
+echo 'html-inline hyperboot'
+node_modules/.bin/html-inline \
+  dist/hyperboot/site.html \
+  > dist/hyperboot/index.html \
+;
+
+echo 'update hyperboot using theme'
+node_modules/.bin/hyperboot upgrade \
+  --themedir dist/hyperboot/ \
+;
