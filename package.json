@@ -1,6 +1,6 @@
 {
   "name": "metapp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The metapp is an interface to the interfaces in the https://metalab.at",
   "private": true,
   "author": "Metalab <metalab@lists.metalab.at>",
